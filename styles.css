@@ -1,0 +1,39 @@
+*{
+    padding: 0%;
+    margin: 0%;
+
+}
+:root{
+    --dark-blue:#14253d;
+    --blue:#457b9d;
+    --light-blue:#a8dadc;
+    --white:#f1faee;
+    --red:#e63946;
+}
+body{
+    background:var(--dark-blue);
+    font-family: 'Montserrat', sans-serif;
+}
+#logo a{
+    color: var(--white);
+}
+.nav-header{
+    display: flex;
+    font-family: 'Abril Fatface', cursive;
+    color: var(--white);
+    min-height: 10vh;
+    justify-content: space-between;
+    padding: 1rem 1.4rem;
+}
+.line1,.line2{
+    margin-top: 0.2rem;
+    width:2rem;
+    height:0.1rem;
+    margin:0.4rem;
+    background:var(--white);
+    pointer-events: none;
+}
+.burger{
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
