@@ -37,9 +37,48 @@ function animateSlides() {
 
 
     });
-    document.addEventListener("DOMContentLoaded",setTimeout(()=>{
-        const nav=document.querySelector(".nav-header");
-        nav.classList.add("fix");
-    },1000))
+
+
+
+ 
 }
+
+window.addEventListener("DOMContentLoaded",()=>{
+    setTimeout(()=>{const nav=document.querySelector(".nav-header");
+    nav.classList.add("fix");},1000)
+    }
+);
+const mouse=document.querySelector(".cursor");
+
+window.addEventListener("mousemove",mouseDetect);
+function mouseDetect(e)
+{
+    mouse.style.top=e.pageY+"px";
+    mouse.style.left=e.pageX+"px";
+}
+
+window.addEventListener("mouseover",mouseAnimate);
+
+function mouseAnimate(e)
+{
+    if(e.target.classList.contains("burger"))
+    {
+       mouse.classList.add("burger-active"); 
+        console.log("f")
+    }
+    else{
+        mouse.classList.remove("burger-active");
+    }
+    if(e.target.classList.contains("btn"))
+    {
+        mouse.classList.add("burger-active");
+    }
+    else{
+        mouse.classList.remove("burge-active");
+    }
+}
+
+
+
 animateSlides();
+
