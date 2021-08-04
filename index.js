@@ -58,7 +58,9 @@ function mouseDetect(e)
 }
 
 window.addEventListener("mouseover",mouseAnimate);
-
+const swipe1=document.querySelector(".t-swipe1");
+const swipe2=document.querySelector(".t-swipe2");
+const swipe3=document.querySelector(".t-swipe3");
 function mouseAnimate(e)
 {
     if(e.target.classList.contains("burger"))
@@ -75,6 +77,27 @@ function mouseAnimate(e)
     }
     else{
         mouse.classList.remove("burge-active");
+    }
+    if(e.target.classList.contains("hero-github"))
+    {
+        swipe1.classList.add("s1-active");
+    }
+    else{
+        swipe1.classList.remove("s1-active");
+    }
+    if(e.target.classList.contains("btn-projects"))
+    {
+        swipe2.classList.add("s2-active");
+    }
+    else{
+        swipe2.classList.remove("s2-active");
+    }
+    if(e.target.classList.contains("btn-blog"))
+    {
+        swipe3.classList.add("s3-active");
+    }
+    else{
+        swipe3.classList.remove("s3-active");
     }
 }
 
