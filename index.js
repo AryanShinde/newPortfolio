@@ -21,13 +21,13 @@ function animateSlides() {
         slideTl.fromTo(revealImg,{x:"0%"},{x:"100%"});
         slideTl.fromTo(img,{scale:"1"},{scale:"1.2"},"-=1");
         slideTl.fromTo(revealText,{x:"0%"},{x:"100%"},"-=1");
-        slideTl.fromTo(header,{y:"-100"},{y:"0%"},"-=0.5");
+        // slideTl.fromTo(header,{y:"-100"},{y:"0%"},"-=0.5");
 
         //scrollMagic
         SlideScene=new ScrollMagic.Scene({
             triggerElement:slide,
-            triggerHook:0.20,
-            reverse:false,
+            triggerHook:0.58,
+            // reverse:false,
         }).setTween(slideTl).addIndicators({colorStart:"white"}).addTo(controller)
         
         NavScene=new ScrollMagic.Scene({
@@ -36,6 +36,10 @@ function animateSlides() {
         }).addIndicators({colorStart:"white",name:"nav-trig"}).addTo(controller).setClassToggle(".nav-header","active");
 
 
-    })
+    });
+    document.addEventListener("DOMContentLoaded",setTimeout(()=>{
+        const nav=document.querySelector(".nav-header");
+        nav.classList.add("fix");
+    },1000))
 }
 animateSlides();

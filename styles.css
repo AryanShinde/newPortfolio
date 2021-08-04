@@ -28,12 +28,18 @@ body{
     position: sticky;
     top:0%;
     z-index:1 ;
+    transition: 1s;
+    transform: translateY(-100%);
     background:linear-gradient(180deg,#05172f,var(--dark-blue));
 
 }
 .nav-header.active{
     box-shadow: 0px 2px 5px #2e4c75;
 
+}
+
+.nav-header.fix{
+    transform: translateY(0%);
 }
 .line1,.line2{
     margin-top: 0.2rem;
