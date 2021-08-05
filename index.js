@@ -61,6 +61,8 @@ window.addEventListener("mouseover",mouseAnimate);
 const swipe1=document.querySelector(".t-swipe1");
 const swipe2=document.querySelector(".t-swipe2");
 const swipe3=document.querySelector(".t-swipe3");
+const burger=document.querySelector(".burger");
+burger.addEventListener("click",navOpen);
 function mouseAnimate(e)
 {
     if(e.target.classList.contains("burger"))
@@ -100,7 +102,33 @@ function mouseAnimate(e)
         swipe3.classList.remove("s3-active");
     }
 }
+function navOpen(e)
+{
+    const line1=(e.target.children[0]);
+    const line2=e.target.children[1];
+    const line3=e.target.children[2];
+    if(!burger.classList.contains("active"))
+    {
+        gsap.to(line2,1,{x:'100',opacity:'0',});
+        gsap.to(line1,0.3,{rotate:"42",y:'8.8',});
+        gsap.to(line3,0.3,{rotate:"-42",y:'-8.8',});
+        gsap.to(burger,0.5,{rotate:'360'});
+        gsap.to('.navbar',1.2,{clipPath:'circle(2500px at 100% -10%'});
+        document.body.classList.add("hide");
+        burger.classList.add("active")
+    }
+    else{
+        gsap.to(line1,0.2,{rotate:"0",y:'0',x:'0',background:'white'});
+        gsap.to(line3,0.2,{rotate:"0",y:'0',background:'white'});
+        gsap.to(burger,0.4,{rotate:'0'})
+        gsap.to(line2,1,{x:'0',opacity:'1',background:'white'});
+        document.body.classList.remove("hide");
+        gsap.to('.navbar',1.2,{clipPath:'circle(50px at 100% -10%'});
+       
 
+        burger.classList.remove("active")
+    }
+}
 
 
 animateSlides();

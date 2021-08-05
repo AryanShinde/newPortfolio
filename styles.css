@@ -15,6 +15,9 @@ body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden !important;
 }
+body.hide{
+    overflow: hidden;
+}
 #logo a{
     color: var(--white);
 }
@@ -27,7 +30,7 @@ body{
     padding: 1rem 1.4rem;
     position: sticky;
     top:0%;
-    z-index:1 ;
+    z-index:3 ;
     transition: 1s;
     transform: translateY(-100%);
     background:linear-gradient(180deg,#091e3a,var(--dark-blue));
@@ -43,13 +46,14 @@ body{
     top:0%;
     transform: translateY(0%);
 }
-.line1,.line2{
+.line1,.line2,.line3{
     margin-top: 0.2rem;
     width:2rem;
-    height:0.1rem;
+    height:0.14rem;
     margin:0.4rem;
     background:var(--white);
     pointer-events: none;
+    z-index: 100;
 }
 
 .slide{
@@ -121,8 +125,9 @@ body{
     align-self: flex-start;
 }
 .burger{
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     cursor: pointer;
+    z-index: 100;
 }
 
 .navbar{
@@ -136,7 +141,8 @@ body{
     background-color: var(--white);
     width: 100%;
     height: 100%;
-    clip-path: circle(50px at 103% -6%);
+    clip-path: circle(50px at 100% -10%);
+    overflow: hidden !important;
 }
 
 .navbar-links h3{
@@ -166,7 +172,7 @@ body{
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    z-index: 2;
+    z-index: 100;
     pointer-events: none;
     transition: 0.2s ease-in-out;
     transition-property: transform, background;
@@ -177,10 +183,10 @@ body{
     background: var(--light-blue);
     transform: translate(-50%,-50%);
     transform-origin: 75% 75%;
-    opacity: 0.8;
-    border: 2px solid var(--blue);
+    opacity: 0.4;
+    border: 2px solid var(--white);
 }
-.cursor.burger-active::before{
+/* .cursor.burger-active::before{
     position: absolute;
     content: attr(tool-tip);
     width:10%;
@@ -190,7 +196,7 @@ body{
     top:20%;
     left:20%;
     color: black;
-}
+} */
 .title{
     overflow: hidden;
     position: relative;
