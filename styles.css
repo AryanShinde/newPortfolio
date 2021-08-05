@@ -13,7 +13,7 @@
 body{
     background:var(--dark-blue);
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 #logo a{
     color: var(--white);
@@ -60,6 +60,7 @@ body{
     margin: 0 auto;
     width: 80%;
     color:var(--white);
+    overflow-x: hidden;
 }
 .hero-dsc,.project-dsc,.blog-dsc{
     margin:1rem;
