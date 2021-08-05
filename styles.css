@@ -39,6 +39,8 @@ body{
 }
 
 .nav-header.fix{
+    position: sticky;
+    top:0%;
     transform: translateY(0%);
 }
 .line1,.line2{
@@ -224,3 +226,24 @@ body{
     transform: translateY(0%);
 }
 
+@media screen and (max-width:1024px) {
+    .nav-header h1 a{
+        font-size: 1.5rem;
+    }
+    .hero-dsc,.project-dsc,.blog-dsc{
+        padding: 0%;
+        padding-top: 1rem;
+    }
+    .slide{
+        display: block;
+        width: 80%;
+    }
+    .title h1{
+        font-size: 38px;
+        padding: 0%;
+        margin: 0%;
+    }
+    .hero-dsc p,.project-dsc p,.blog-dsc p{
+        font-size: 1rem;
+    }
+}
